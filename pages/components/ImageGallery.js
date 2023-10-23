@@ -6,6 +6,13 @@ const ImageGallery = ({ products, category }) => {
   const width = 260
   const aspectRatio = 3 / 4
   const height = Math.round(width / aspectRatio)
+
+  const sortedProducts = products?.slice().sort((a, b) => {
+    if (a.createdAt < b.createdAt) return -1
+    if (a.createdAt > b.createdAt) return 1
+    return 0
+  })
+
   return (
     <div>
       <h1
@@ -17,27 +24,26 @@ const ImageGallery = ({ products, category }) => {
       >
         <TitleWithLine title={category} />
       </h1>
-      {products &&
-        products.map((product, index) => (
-          <div
-            key={index}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              marginBottom: 55,
-              alignItems: index % 2 === 0 ? 'end' : 'start',
-            }}
-          >
-            <h3>{product.title}</h3>
-            <Image
-              src={product.image}
-              alt={product.title}
-              height={height}
-              width={width}
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-        ))}
+      {sortedProducts?.reverse().map((product, index) => (
+        <div
+          key={index}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            marginBottom: 55,
+            alignItems: index % 2 === 0 ? 'end' : 'start',
+          }}
+        >
+          <h3>{product.title}</h3>
+          <Image
+            src={product.image}
+            alt={product.title}
+            height={height}
+            width={width}
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+      ))}
     </div>
   )
 }

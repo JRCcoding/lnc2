@@ -22,24 +22,31 @@ const Cakes = () => {
       <Navbar />
       <div
         style={{
-          paddingTop: 150,
-          paddingLeft: '5%',
-          paddingRight: '5%',
           background: `url('/bg.png')`,
           minHeight: '150vh',
           backgroundSize: '150% auto',
         }}
       >
-        <Paper
-          elevation={24}
-          sx={{
-            minHeight: '500px',
-            border: '1px solid var(--orange)',
-            padding: 2,
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '50%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         >
-          <ImageGallery category='Cakes' products={cakes} />
-        </Paper>
+          <Paper
+            elevation={24}
+            sx={{
+              minHeight: '500px',
+              border: '1px solid var(--orange)',
+              padding: 2,
+            }}
+          >
+            <ImageGallery category='Cakes' products={cakes} />
+          </Paper>
+        </div>
       </div>
     </div>
   )
