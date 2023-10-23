@@ -105,6 +105,20 @@ export default function Navbar() {
           <Button sx={{ color: '#ffff' }}>Cupcakes/Cake Pops</Button>
         </div>
       </Drawer>
+      <Image
+        src='/spider-web.png'
+        height={100}
+        width={100}
+        alt='100'
+        style={{ marginTop: -5 }}
+      />
+      <Image
+        src='/spider-web.png'
+        height={100}
+        width={100}
+        alt='100'
+        style={{ float: 'right', transform: 'scaleX(-1)', marginTop: -5 }}
+      />
     </Box>
   )
 }
