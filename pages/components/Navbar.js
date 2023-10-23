@@ -113,6 +113,17 @@ export default function Navbar() {
         style={{ marginTop: -5 }}
       />
       <Image
+        src='/spider.png'
+        height={100}
+        width={100}
+        alt='100'
+        style={{
+          position: 'absolute',
+          right: 0,
+          top: 150,
+        }}
+      />
+      <Image
         src='/spider-web.png'
         height={100}
         width={100}

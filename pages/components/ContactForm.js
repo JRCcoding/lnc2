@@ -77,7 +77,7 @@ export default function ContactForm() {
           background: 'var(--orange)',
           color: '#ffffff',
           gap: 10,
-          padding: 10,
+          padding: '25px 150px',
         }}
       >
         <TextField

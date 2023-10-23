@@ -24,32 +24,42 @@ export default function Home() {
       <Navbar />
       <div
         style={{
-          paddingTop: 150,
-          paddingLeft: '5%',
-          paddingRight: '5%',
           background: `url('/bg.png')`,
           minHeight: '150vh',
           backgroundSize: '150% auto',
         }}
       >
-        <Paper
-          elevation={24}
-          sx={{
-            minHeight: '500px',
-            border: '1px solid var(--orange)',
-            padding: 2,
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '50%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         >
-          <ImageGallery
-            category='Recent'
-            products={cakes.slice(0, showMore ? 10 : 3)}
-          />
-          <Button sx={{ width: '100%' }} onClick={() => setShowMore(!showMore)}>
-            Show {showMore ? 'less' : 'more'}
-          </Button>
-          {/* <ImageGallery category='Smash Cakes' /> */}
-        </Paper>
-        <ContactForm />
+          <Paper
+            elevation={24}
+            sx={{
+              minHeight: '500px',
+              border: '1px solid var(--orange)',
+              padding: 2,
+            }}
+          >
+            <ImageGallery
+              category='Recent'
+              products={cakes.slice(0, showMore ? 10 : 3)}
+            />
+            <Button
+              sx={{ width: '100%' }}
+              onClick={() => setShowMore(!showMore)}
+            >
+              Show {showMore ? 'less' : 'more'}
+            </Button>
+            {/* <ImageGallery category='Smash Cakes' /> */}
+          </Paper>
+          <ContactForm />
+        </div>
       </div>
     </div>
   )
