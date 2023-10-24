@@ -132,7 +132,7 @@ export default function ContactForm() {
           }}
         />
       </form>
-      <div
+      {/* <div
         style={{
           display: 'flex',
           padding: '2.5% 15%',
@@ -141,7 +141,7 @@ export default function ContactForm() {
       >
         <FacebookIcon sx={{ fontSize: '80px' }} />
         <PhoneAndroidIcon sx={{ fontSize: '80px' }} />
-      </div>
+      </div> */}
     </div>
   )
 }
