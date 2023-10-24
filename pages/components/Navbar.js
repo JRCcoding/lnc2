@@ -66,7 +66,7 @@ export default function Navbar() {
             {drawerOpen === true ? <MenuOpenIcon /> : <MenuIcon />}
           </Button>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            {['Cakes', 'Cupcakes / Cake Pops'].map((item, index) => (
+            {['Home', 'Cakes', 'Cupcakes / Cake Pops'].map((item, index) => (
               <div key={index}>
                 <MenuItem
                   sx={{
@@ -74,7 +74,12 @@ export default function Navbar() {
                     color: 'white',
                     textAlign: 'right',
                   }}
-                  onClick={() => router.push(`/${item.split(' ')[0]}`)}
+                  onClick={() =>
+                    router.push(
+                      // `/${item.split(' ')[0]}`
+                      item === 'Home' ? '/' : item.split(' ')[0]
+                    )
+                  }
                 >
                   {item}
                 </MenuItem>

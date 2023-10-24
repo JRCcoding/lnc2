@@ -56,6 +56,10 @@ export default function ContactForm() {
       console.error(error)
     }
   }
+  const [isMobile, setIsMobile] = React.useState(true)
+  React.useEffect(() => {
+    if (window.innerWidth >= 501) setIsMobile(false)
+  }, [])
 
   return (
     <div
@@ -68,7 +72,7 @@ export default function ContactForm() {
         color: '#ffffff',
       }}
     >
-      <h1 style={{ textAlign: 'center' }}>Contact Me</h1>
+      <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>Contact Me</h1>
       <form
         onSubmit={handleSubmit}
         style={{
@@ -77,7 +81,7 @@ export default function ContactForm() {
           background: 'var(--orange)',
           color: '#ffffff',
           gap: 10,
-          padding: '25px 150px',
+          padding: isMobile ? '25px 50px' : '25px 150px',
         }}
       >
         <TextField
@@ -111,7 +115,20 @@ export default function ContactForm() {
           required
         />
 
-        <input type='submit' value='Submit' />
+        <input
+          type='submit'
+          value='Submit'
+          style={{
+            backgroundColor: 'var(--purple)',
+            color: 'white',
+            borderRadius: '15px',
+            border: '0',
+            textShadow: '1px 2px 10px black',
+            padding: 5,
+            fontSize: '1.3rem',
+            marginTop: '25px',
+          }}
+        />
       </form>
     </div>
   )

@@ -4,6 +4,7 @@ import { Button, Paper } from '@mui/material'
 import ImageGallery from './components/ImageGallery'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '@/firebase'
+import ContactForm from './components/ContactForm'
 
 const Cupcakes = () => {
   const [cupcakes, setCupcakes] = React.useState(null)
@@ -67,6 +68,7 @@ const Cupcakes = () => {
             <ImageGallery category='Cupcakes' products={cupcakes} />
             <ImageGallery category='Cake Pops' products={cakepops} />
           </Paper>
+          <ContactForm />
         </div>
       </div>
     </div>
