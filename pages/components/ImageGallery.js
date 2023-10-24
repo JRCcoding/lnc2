@@ -35,7 +35,7 @@ const ImageGallery = ({ products, category }) => {
             alignItems: index % 2 === 0 ? 'end' : 'start',
           }}
         >
-          <h3>{product.title}</h3>
+          <h2 style={{ fontFamily: 'Pacifico' }}>{product.title}</h2>
           <Image
             src={product.image}
             alt={product.title}

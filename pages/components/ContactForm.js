@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { TextField } from '@mui/material'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -130,6 +132,16 @@ export default function ContactForm() {
           }}
         />
       </form>
+      <div
+        style={{
+          display: 'flex',
+          padding: '2.5% 15%',
+          justifyContent: 'space-between',
+        }}
+      >
+        <FacebookIcon sx={{ fontSize: '80px' }} />
+        <PhoneAndroidIcon sx={{ fontSize: '80px' }} />
+      </div>
     </div>
   )
 }
