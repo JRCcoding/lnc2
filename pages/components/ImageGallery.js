@@ -7,11 +7,12 @@ const ImageGallery = ({ products, category }) => {
   const aspectRatio = 3 / 4
   const height = Math.round(width / aspectRatio)
 
-  const sortedProducts = products?.slice().sort((a, b) => {
-    if (a.createdAt < b.createdAt) return -1
-    if (a.createdAt > b.createdAt) return 1
-    return 0
-  })
+  // const timeStamp = new Date().toLocaleString('en-US', {
+  //   dateStyle: 'short',
+  //   timeStyle: 'short',
+  // })
+  // console.log(timeStamp)
+  // Parse the createdAt property and convert it to a Date object.
 
   return (
     <div>
@@ -24,7 +25,7 @@ const ImageGallery = ({ products, category }) => {
       >
         <TitleWithLine title={category} />
       </h1>
-      {sortedProducts?.reverse().map((product, index) => (
+      {products?.map((product, index) => (
         <div
           key={index}
           style={{

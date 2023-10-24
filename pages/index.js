@@ -13,11 +13,21 @@ export default function Home() {
       const cakesRef = collection(db, 'cakes')
       const querySnapshot = await getDocs(cakesRef)
       const cakesData = querySnapshot.docs.map((doc) => doc.data())
+      cakesData.forEach((cake) => {
+        cake.createdAt = new Date(cake.createdAt)
+      })
+
+      // Sort cakes by createdAt timestamp
+      cakesData.sort((a, b) => b.createdAt - a.createdAt)
       setCakes(cakesData)
     }
     fetchCakes()
   }, [])
   const [showMore, setShowMore] = React.useState(false)
+  const [isMobile, setIsMobile] = React.useState(true)
+  React.useEffect(() => {
+    if (window.innerWidth >= 501) setIsMobile(false)
+  }, [])
 
   return (
     <div>
@@ -33,7 +43,7 @@ export default function Home() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '50%',
+            width: isMobile ? '88%' : '45%',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}

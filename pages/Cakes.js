@@ -13,9 +13,19 @@ const Cakes = () => {
       const q = query(cakesRef, where('type', '==', 'cake'))
       const querySnapshot = await getDocs(q)
       const cakesData = querySnapshot.docs.map((doc) => doc.data())
+      cakesData.forEach((cake) => {
+        cake.createdAt = new Date(cake.createdAt)
+      })
+
+      // Sort cakes by createdAt timestamp
+      cakesData.sort((a, b) => b.createdAt - a.createdAt)
       setCakes(cakesData)
     }
     fetchCakes()
+  }, [])
+  const [isMobile, setIsMobile] = React.useState(true)
+  React.useEffect(() => {
+    if (window.innerWidth >= 501) setIsMobile(false)
   }, [])
   return (
     <div>
@@ -31,7 +41,7 @@ const Cakes = () => {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '50%',
+            width: isMobile ? '88%' : '45%',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}

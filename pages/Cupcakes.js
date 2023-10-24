@@ -23,9 +23,19 @@ const Cupcakes = () => {
       const q = query(cakesRef, where('type', '==', 'cakepop'))
       const querySnapshot = await getDocs(q)
       const cakesData = querySnapshot.docs.map((doc) => doc.data())
+      cakesData.forEach((cake) => {
+        cake.createdAt = new Date(cake.createdAt)
+      })
+
+      // Sort cakes by createdAt timestamp
+      cakesData.sort((a, b) => b.createdAt - a.createdAt)
       setCakepops(cakesData)
     }
     fetchCakepops()
+  }, [])
+  const [isMobile, setIsMobile] = React.useState(true)
+  React.useEffect(() => {
+    if (window.innerWidth >= 501) setIsMobile(false)
   }, [])
   return (
     <div>
@@ -41,7 +51,7 @@ const Cupcakes = () => {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '50%',
+            width: isMobile ? '88%' : '45%',
             marginLeft: 'auto',
             marginRight: 'auto',
           }}
