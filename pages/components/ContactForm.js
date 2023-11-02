@@ -33,7 +33,7 @@ export default function ContactForm() {
 
     return cleaned
   }
-
+  const [submitted, setSubmitted] = useState(false)
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -49,6 +49,7 @@ export default function ContactForm() {
       if (response.status === 200) {
         // Email sent successfully
         console.log('Email sent successfully')
+        setSubmitted(true)
         // Reset the form or show a success message
       } else {
         // Handle the error, e.g., display an error message
@@ -74,64 +75,76 @@ export default function ContactForm() {
         color: '#ffffff',
       }}
     >
-      <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>Contact Me</h1>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          background: 'var(--orange)',
-          color: '#ffffff',
-          gap: 10,
-          padding: isMobile ? '25px 50px' : '25px 150px',
-        }}
-      >
-        <TextField
-          name='name'
-          id='name'
-          label='Name'
-          variant='standard'
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+      {!submitted ? (
+        <div>
+          <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>
+            Contact Me
+          </h1>
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              background: 'var(--orange)',
+              color: '#ffffff',
+              gap: 10,
+              padding: isMobile ? '25px 50px' : '25px 150px',
+            }}
+          >
+            <TextField
+              name='name'
+              id='name'
+              label='Name'
+              variant='standard'
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
 
-        <TextField
-          name='number'
-          id='number'
-          label='Number'
-          variant='standard'
-          value={formData.number}
-          onChange={handlePhoneNumberChange}
-          required
-          inputProps={{ inputMode: 'numeric', pattern: '[0-9, (, ), -]*' }}
-        />
+            <TextField
+              name='number'
+              id='number'
+              label='Number'
+              variant='standard'
+              value={formData.number}
+              onChange={handlePhoneNumberChange}
+              required
+              inputProps={{ inputMode: 'numeric', pattern: '[0-9, (, ), -]*' }}
+            />
 
-        <TextField
-          name='message'
-          id='message'
-          label='Message'
-          variant='standard'
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
+            <TextField
+              name='message'
+              id='message'
+              label='Message'
+              variant='standard'
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
 
-        <input
-          type='submit'
-          value='Submit'
-          style={{
-            backgroundColor: 'var(--purple)',
-            color: 'white',
-            borderRadius: '15px',
-            border: '0',
-            textShadow: '1px 2px 10px black',
-            padding: 5,
-            fontSize: '1.3rem',
-            marginTop: '25px',
-          }}
-        />
-      </form>
+            <input
+              type='submit'
+              value='Submit'
+              style={{
+                backgroundColor: 'var(--purple)',
+                color: 'white',
+                borderRadius: '15px',
+                border: '0',
+                textShadow: '1px 2px 10px black',
+                padding: 5,
+                fontSize: '1.3rem',
+                marginTop: '25px',
+              }}
+            />
+          </form>
+        </div>
+      ) : (
+        <div style={{ padding: 15, textAlign: 'center' }}>
+          <h3>Thank you, {formData.name.split(' ')[0]}!</h3>
+          <p>I will get back with you as soon as possible!</p>
+        </div>
+      )}
+
       {/* <div
         style={{
           display: 'flex',
