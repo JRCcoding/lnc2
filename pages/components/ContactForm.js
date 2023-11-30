@@ -85,10 +85,10 @@ export default function ContactForm() {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              background: 'var(--orange)',
+              background: 'var(--green)',
               color: '#ffffff',
               gap: 10,
-              padding: isMobile ? '25px 50px' : '25px 150px',
+              padding: isMobile ? '25px 50px' : '25px 100px',
             }}
           >
             <TextField
@@ -126,7 +126,7 @@ export default function ContactForm() {
               type='submit'
               value='Submit'
               style={{
-                backgroundColor: 'var(--purple)',
+                backgroundColor: 'var(--red)',
                 color: 'white',
                 borderRadius: '15px',
                 border: '0',
