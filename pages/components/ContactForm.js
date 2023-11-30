@@ -76,8 +76,14 @@ export default function ContactForm() {
       }}
     >
       {!submitted ? (
-        <div>
-          <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>
+        <div style={{ color: 'white' }}>
+          <h1
+            style={{
+              textAlign: 'center',
+              paddingTop: '15px',
+              paddingBottom: '15px',
+            }}
+          >
             Contact Me
           </h1>
           <form
@@ -86,9 +92,10 @@ export default function ContactForm() {
               display: 'flex',
               flexDirection: 'column',
               background: 'var(--green)',
-              color: '#ffffff',
               gap: 10,
               padding: isMobile ? '25px 50px' : '25px 100px',
+              border: '2px solid var(--red)',
+              color: 'white',
             }}
           >
             <TextField
