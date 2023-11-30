@@ -69,7 +69,7 @@ export default function ContactForm() {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        background: 'var(--orange)',
+        background: 'var(--red)',
         marginTop: 5,
         borderRadius: 5,
         color: '#ffffff',
