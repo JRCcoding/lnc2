@@ -10,6 +10,7 @@ import Image from 'next/image'
 import { Menu, MenuItem } from '@mui/material'
 import { useRouter } from 'next/router'
 import MenuOpenIcon from '@mui/icons-material/MenuOpen'
+import ParkOutlinedIcon from '@mui/icons-material/ParkOutlined'
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false)
@@ -32,7 +33,7 @@ export default function Navbar() {
       <AppBar
         position='sticky'
         sx={{
-          backgroundColor: 'var(--orange)',
+          backgroundColor: 'var(--red)',
           minHeight: 100,
           justifyContent: 'center',
           borderBottom: '1px solid black',
@@ -52,19 +53,21 @@ export default function Navbar() {
             }}
             onClick={() => router.push('/')}
           />
-          <Button
-            color='inherit'
-            sx={{
+          <span
+            role='img'
+            aria-label='Christmas Tree'
+            style={{
               marginLeft: 'auto',
-              fontSize: '1.1rem',
-              color: 'black',
+              fontSize: '3rem',
+              color: 'green', // Change color if needed
               fontWeight: 'bolder',
               fontFamily: 'Pacifico',
+              cursor: 'pointer',
             }}
             onClick={handleClick}
           >
-            {drawerOpen === true ? <MenuOpenIcon /> : <MenuIcon />}
-          </Button>
+            🎄
+          </span>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             {['Home', 'Cakes', 'Cupcakes / Cake Pops'].map((item, index) => (
               <div key={index}>
@@ -110,7 +113,74 @@ export default function Navbar() {
           <Button sx={{ color: '#ffff' }}>Cupcakes/Cake Pops</Button>
         </div>
       </Drawer>
-      <Image
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          width: '100vw',
+          flexWrap: 'nowrap',
+        }}
+      >
+        <Image
+          src='/lights.png'
+          height={100}
+          width={350}
+          alt='lights'
+          style={{ marginTop: -25 }}
+        />
+        <Image
+          src='/lights.png'
+          height={100}
+          width={350}
+          alt='lights'
+          style={{ marginTop: -25 }}
+        />
+        <Image
+          src='/lights.png'
+          height={100}
+          width={350}
+          alt='lights'
+          style={{ marginTop: -25 }}
+        />
+        <Image
+          src='/lights.png'
+          height={100}
+          width={350}
+          alt='lights'
+          style={{ marginTop: -25 }}
+        />
+        <Image
+          src='/lights.png'
+          height={100}
+          width={350}
+          alt='lights'
+          style={{ marginTop: -25 }}
+        />
+        <Image
+          src='/lights.png'
+          height={100}
+          width={350}
+          alt='lights'
+          style={{ marginTop: -25 }}
+        />
+        <Image
+          src='/lights.png'
+          height={100}
+          width={350}
+          alt='lights'
+          style={{ marginTop: -25 }}
+        />
+        <Image
+          src='/lights.png'
+          height={100}
+          width={350}
+          alt='lights'
+          style={{ marginTop: -25 }}
+        />
+      </div>
+
+      {/* <Image
         src='/spider-web.png'
         height={100}
         width={100}
@@ -127,14 +197,14 @@ export default function Navbar() {
           right: 0,
           top: 150,
         }}
-      />
-      <Image
+      /> */}
+      {/* <Image
         src='/spider-web.png'
         height={100}
         width={100}
         alt='100'
         style={{ float: 'right', transform: 'scaleX(-1)', marginTop: -5 }}
-      />
+      /> */}
     </Box>
   )
 }

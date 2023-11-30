@@ -36,7 +36,7 @@ export default function Home() {
         style={{
           background: `url('/bg.png')`,
           minHeight: '150vh',
-          backgroundSize: '150% auto',
+          backgroundSize: isMobile ? '150% auto' : '50% auto',
         }}
       >
         <div
@@ -46,6 +46,7 @@ export default function Home() {
             width: isMobile ? '88%' : '45%',
             marginLeft: 'auto',
             marginRight: 'auto',
+            paddingTop: 150,
           }}
         >
           <Paper
