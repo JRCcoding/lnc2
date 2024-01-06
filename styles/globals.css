@@ -16,6 +16,7 @@
 :root {
   --orange: rgb(255, 171, 16);
   --purple: #974fba;
+  --pink: rgb(255, 74, 119);
   --red: rgb(160, 60, 60);
   --green: rgb(65, 150, 65);
 }
@@ -74,5 +75,5 @@ a {
 .horizontal-line {
   flex: 1; /* Allow the line to stretch across the remaining space */
   height: 1px; /* Adjust the line's height as needed */
-  background-color: var(--orange); /* Set line color to black or any other color you prefer */
+  background-color: var(--pink); /* Set line color to black or any other color you prefer */
 }

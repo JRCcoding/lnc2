@@ -53,7 +53,7 @@ export default function Home() {
             elevation={24}
             sx={{
               minHeight: '500px',
-              border: '1px solid var(--orange)',
+              border: '1px solid var(--pink)',
               padding: 2,
             }}
           >

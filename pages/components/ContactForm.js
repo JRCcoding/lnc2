@@ -69,7 +69,7 @@ export default function ContactForm() {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        background: 'var(--red)',
+        background: 'var(--pink)',
         marginTop: 5,
         borderRadius: 5,
         color: '#ffffff',
@@ -91,10 +91,11 @@ export default function ContactForm() {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              background: 'var(--green)',
+              // background: 'var(--purple)',
+              background: 'white',
               gap: 10,
               padding: isMobile ? '25px 50px' : '25px 100px',
-              border: '2px solid var(--red)',
+              border: '2px solid var(--pink)',
               color: 'white',
             }}
           >
@@ -133,7 +134,7 @@ export default function ContactForm() {
               type='submit'
               value='Submit'
               style={{
-                backgroundColor: 'var(--red)',
+                backgroundColor: 'var(--pink)',
                 color: 'white',
                 borderRadius: '15px',
                 border: '0',

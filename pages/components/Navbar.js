@@ -33,7 +33,7 @@ export default function Navbar() {
       <AppBar
         position='sticky'
         sx={{
-          backgroundColor: 'var(--red)',
+          backgroundColor: 'var(--pink)',
           minHeight: 100,
           justifyContent: 'center',
           borderBottom: '1px solid black',
@@ -47,6 +47,7 @@ export default function Navbar() {
             width={120}
             style={{
               position: 'absolute',
+              marginTop: 9,
               borderRadius: '50%',
               border: '1px solid black',
               top: -15,
@@ -66,7 +67,7 @@ export default function Navbar() {
             }}
             onClick={handleClick}
           >
-            🎄
+            💘
           </span>
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             {['Home', 'Cakes', 'Cupcakes / Cake Pops'].map((item, index) => (
@@ -92,16 +93,18 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor='left' open={drawerOpen} onClose={toggleDrawer}>
+      <Drawer
+        open={drawerOpen}
+        onClose={toggleDrawer}
+        sx={{
+          background: 'var(--purple)',
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         {/* Content for the side drawer */}
-        <div
-          style={{
-            background: 'var(--purple)',
-            minHeight: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
+        <div>
           {/* Add your links, buttons, or other content here */}
           <Button
             onClick={toggleDrawer}
@@ -113,7 +116,8 @@ export default function Navbar() {
           <Button sx={{ color: '#ffff' }}>Cupcakes/Cake Pops</Button>
         </div>
       </Drawer>
-      <div
+      {/* CHRISTMAS LIGHTS */}
+      {/* <div
         style={{
           display: 'flex',
           flexDirection: 'row',
@@ -178,8 +182,8 @@ export default function Navbar() {
           alt='lights'
           style={{ marginTop: -25 }}
         />
-      </div>
-
+      </div> */}
+      {/* SPIDER WEBS */}
       {/* <Image
         src='/spider-web.png'
         height={100}
